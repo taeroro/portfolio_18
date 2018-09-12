@@ -1,0 +1,53 @@
+.home-container {
+  width: 100vw;
+  height: 100vh;
+}
+
+.home-corner-lines {
+  div[class*='corner-line-'] {
+    position: fixed;
+    width: 120px;
+    height: 1px;
+    background-color: #FFF;
+  }
+
+  .corner-line-tl {
+    top: 0;
+    left: 0;
+    transform: rotate(25deg);
+    transform-origin: top left;
+  }
+
+  .corner-line-tr {
+    top: 0;
+    right: 0;
+    transform: rotate(-25deg);
+    transform-origin: top right;
+  }
+
+  .corner-line-br {
+    bottom: 0;
+    right: 0;
+    transform: rotate(25deg);
+    transform-origin: bottom right;
+  }
+
+  .corner-line-bl {
+    bottom: 0;
+    left: 0;
+    transform: rotate(-25deg);
+    transform-origin: bottom left;
+  }
+}
+
+.about-container {
+  background: linear-gradient(to bottom right, #21D4FD, #B721FF);
+}
+
+.work-container {
+  background: linear-gradient(to bottom left, #48C6EF, #6F86D6);
+}
+
+.contact-container {
+  background: linear-gradient(to bottom right, #868F96, #596164);
+}
