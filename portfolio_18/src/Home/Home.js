@@ -11,7 +11,7 @@ export default class Home extends Component {
       prevY: 0
     };
 
-    this.scrollingTest = false;
+    this.scrolling = false;
 
     this.myRef1 = React.createRef();
     this.myRef2 = React.createRef();
