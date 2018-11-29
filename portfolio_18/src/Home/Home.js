@@ -8,7 +8,8 @@ export default class Home extends Component {
 
     this.state = {
       windowHeight: window.innerHeight,
-      prevY: 0
+      prevY: 0,
+      pageNum: 1
     };
 
     this.scrolling = false;
@@ -25,8 +26,8 @@ export default class Home extends Component {
     this.wheelEvent = this.wheelEvent.bind(this);
   }
 
-  // TODO: change normal scroll to this scroll
   componentDidMount() {
+    this.state.pageNum = this.getInitPageNum();
     this.disableScroll();
     this.updateWindowDimensions();
 
@@ -46,6 +47,18 @@ export default class Home extends Component {
     this.setState({ windowHeight: window.innerHeight });
   }
 
+  getInitPageNum() {
+    if (window.scrollY < this.state.windowHeight) {
+      this.setState({ pageNum: 1 });
+    }
+    else if (this.state.windowHeight <= window.scrollY && window.scrollY < 2 * this.state.windowHeight) {
+      this.setState({ pageNum: 2 });
+    }
+    else if (2 * this.state.windowHeight <= window.scrollY && window.scrollY < 3 * this.state.windowHeight) {
+      this.setState({ pageNum: 3 });
+    }
+  }
+
   wheelEvent(event) {
     // Scrolling down
     if (!this.scrolling && event.wheelDeltaY < 0) {
@@ -55,6 +68,7 @@ export default class Home extends Component {
             top: this.myRef2.current.offsetTop,
             behavior: "smooth"
         });
+        this.setState({ pageNum: 2 });
         this.scrolling = false;
       }
       else if (this.state.windowHeight <= window.scrollY && window.scrollY < 2 * this.state.windowHeight) {
@@ -63,6 +77,7 @@ export default class Home extends Component {
             top: this.myRef3.current.offsetTop,
             behavior: "smooth"
         });
+        this.setState({ pageNum: 3 });
         this.scrolling = false;
       }
     }
@@ -74,6 +89,7 @@ export default class Home extends Component {
             top: this.myRef1.current.offsetTop,
             behavior: "smooth"
         });
+        this.setState({ pageNum: 1 });
         this.scrolling = false;
       }
       else if (2 * this.state.windowHeight <= window.scrollY && window.scrollY < 3 * this.state.windowHeight) {
@@ -82,6 +98,7 @@ export default class Home extends Component {
             top: this.myRef2.current.offsetTop,
             behavior: "smooth"
         });
+        this.setState({ pageNum: 2 });
         this.scrolling = false;
       }
     }
@@ -134,10 +151,22 @@ export default class Home extends Component {
     );
   }
 
+  renderLabelNumber() {
+    switch (this.state.pageNum) {
+      case 1:
+        return <div className="side-label-text">01 ABOUT</div>;
+      case 2:
+        return <div className="side-label-text">02 WORK</div>;
+      case 3:
+        return <div className="side-label-text">03 CONTACT</div>;
+    }
+  }
+
   renderSideLabel() {
+    // TODO: Update number
     return (
       <div className="home-side-label-container">
-        <div className="side-label-text">01 ABOUT</div>
+        {this.renderLabelNumber()}
         <div className="side-label-line"></div>
       </div>
     );
