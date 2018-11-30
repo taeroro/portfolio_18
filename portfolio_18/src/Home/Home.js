@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import debounce from 'lodash/debounce';
+import smoothscroll from 'smoothscroll-polyfill'
 import './Home.css';
+
+const diag_line_src = "/arts/diagonal_line.svg";
 
 export default class Home extends Component {
   constructor(props) {
@@ -13,6 +16,7 @@ export default class Home extends Component {
     };
 
     this.scrolling = false;
+    this.isFirefox = false;
 
     this.myRef1 = React.createRef();
     this.myRef2 = React.createRef();
@@ -28,11 +32,14 @@ export default class Home extends Component {
 
   componentDidMount() {
     this.state.pageNum = this.getInitPageNum();
+    this.isFirefox = typeof InstallTrigger !== 'undefined';
     this.disableScroll();
     this.updateWindowDimensions();
 
+    smoothscroll.polyfill();
+
     window.addEventListener('resize', this.updateWindowDimensions);
-    window.addEventListener('wheel', debounce(this.wheelEvent, 20, {
+    window.addEventListener('wheel', debounce(this.wheelEvent, 34, {
       'leading': true,
       'trailing': false
     }));
@@ -61,7 +68,8 @@ export default class Home extends Component {
 
   wheelEvent(event) {
     // Scrolling down
-    if (!this.scrolling && event.wheelDeltaY < 0) {
+    if (!this.scrolling && event.deltaY > 0) {
+
       if (window.scrollY < this.state.windowHeight) {
         this.scrolling = true;
         window.scrollTo({
@@ -82,7 +90,7 @@ export default class Home extends Component {
       }
     }
     // Scrolling up
-    else if (!this.scrolling && event.wheelDeltaY > 0) {
+    else if (!this.scrolling && event.deltaY < 0) {
       if (this.state.windowHeight <= window.scrollY && window.scrollY < 2 * this.state.windowHeight) {
         this.scrolling = true;
         window.scrollTo({
@@ -163,7 +171,6 @@ export default class Home extends Component {
   }
 
   renderSideLabel() {
-    // TODO: Update number
     return (
       <div className="home-side-label-container">
         {this.renderLabelNumber()}
@@ -173,12 +180,21 @@ export default class Home extends Component {
   }
 
   renderShapes() {
-    // TODO
-    return (
-      <div className="home-random-shapes">
+    const left_shapes_img_src = "/arts/left_shapes.svg";
+    const right_shapes_img_src = "/arts/right_shapes.svg";
 
-      </div>
-    );
+    // TODO: change the position using media query
+    if (this.state.pageNum === 1)
+      return (
+        <div className="home-random-shapes">
+          <div className="shapes-left-container">
+            <img className="left-shapes" src={left_shapes_img_src} alt="l" />
+          </div>
+          <div className="shapes-right-container">
+            <img className="right-shapes" src={right_shapes_img_src} alt="r" />
+          </div>
+        </div>
+      );
   }
 
   renderAbout() {
@@ -186,28 +202,101 @@ export default class Home extends Component {
       <div className="home-container about-container" ref={this.myRef1}>
         {this.renderShapes()}
 
-        <div className="about-text-container">
-          <h1>HI,</h1>
-          <h1>THIS IS RYAN FAN,</h1>
-          <h1>A DESIGNER / SW ENGINEER.</h1>
-          <h1>INTERSTED IN UI / UX DESIGN.</h1>
+        <div className="about-animation-container">
+          <img className="diagonal-line-left" src={diag_line_src} alt="l" />
+
+          <div className="about-text-container">
+            <h1>HI,</h1>
+            <h1>I'M RYAN FAN,</h1>
+            <h1>A DESIGNER / SW ENGINEER.</h1>
+            <h1>FOCUSING ON UI / UX DESIGN.</h1>
+          </div>
+
+          <img className="diagonal-line-right" src={diag_line_src} alt="r" />
         </div>
       </div>
     );
   }
 
   renderWork() {
+    // TODO: change the postition of MYWORKS using media query
+
     return (
       <div className="home-container work-container" ref={this.myRef2}>
-        WORK
+        <div className="work-animation-container">
+          <img className="work-diagonal-line-left" src={diag_line_src} alt="l" />
+
+          <div className="work-content-container">
+            <div className="work-heading-container">
+              <h1>MY WORKS:</h1>
+            </div>
+
+            <div className="work-options-container">
+              <div className="work-digital-container">
+                <h1 className="work-first-letter">D</h1>
+                <h1 className="work-letters">IGITA</h1>
+                <h1 className="work-last-letter">L</h1>
+              </div>
+
+              <div className="work-options-divide-line"></div>
+
+              <div className="work-illustration-container">
+                <h1 className="work-first-letter">I</h1>
+                <h1 className="work-letters">LLUSTRATIO</h1>
+                <h1 className="work-last-letter">N</h1>
+              </div>
+            </div>
+          </div>
+
+          <img className="work-diagonal-line-right" src={diag_line_src} alt="r" />
+        </div>
       </div>
     );
   }
 
   renderContact() {
+    // TODO: change this link to the one on S3
+    const portrait_img_src = "https://scontent-ort2-1.xx.fbcdn.net/v/t1.0-9/31171271_1674203579339998_8769581829122145631_n.jpg?_nc_cat=104&_nc_ht=scontent-ort2-1.xx&oh=21bc82da5cfcf0f779eb890cf0b910a6&oe=5C6F2163";
+    const linkedin_img_src = "/linkIcons/icons8-linkedin.png";
+    const behance_img_src = "/linkIcons/icons8-behance.png";
+    const dribbble_img_src = "/linkIcons/icons8-dribbble.png";
+    const instagram_img_src = "/linkIcons/icons8-instagram_new.png";
+    const github_img_src = "/linkIcons/icons8-github.png";
+
+
     return (
       <div className="home-container contact-container" ref={this.myRef3}>
-        CONTACT
+        <div className="contact-bio-container">
+          <div className="portrait-container">
+            <img className="portrait-img" src={portrait_img_src} alt="portrait" />
+          </div>
+
+          <div className="contact-info-container">
+            <h1>RYAN FAN</h1>
+            <div className="contact-email-container">
+              <h2>EMAIL: </h2>
+              <a href="mailto:ryanfan1996@gmail.com">ryanfan1996@gmail.com</a>
+            </div>
+          </div>
+        </div>
+
+        <div className="contact-links-container">
+          <a href="https://www.linkedin.com/in/zuyuanfan/">
+            <img className="icons-img" src={linkedin_img_src} alt="linkedin" />
+          </a>
+          <a href="https://www.behance.net/ryanfandesign">
+            <img className="icons-img" src={behance_img_src} alt="behance" />
+          </a>
+          <a href="https://dribbble.com/ryantf11">
+            <img className="icons-img" src={dribbble_img_src} alt="dribbble" />
+          </a>
+          <a href="https://www.instagram.com/ryantf11/">
+            <img className="icons-img" src={instagram_img_src} alt="instagram" />
+          </a>
+          <a href="https://github.com/taeroro">
+            <img className="icons-img last-icon" src={github_img_src} alt="github" />
+          </a>
+        </div>
       </div>
     );
   }

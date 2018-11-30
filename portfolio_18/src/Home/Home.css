@@ -56,8 +56,45 @@
     background-color: #FFF;
     margin-left: 15px; }
 
+.home-random-shapes {
+  position: fixed;
+  width: 100%;
+  height: 100%; }
+  .home-random-shapes .shapes-left-container {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    left: 0;
+    padding-bottom: 8%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end; }
+  .home-random-shapes .shapes-right-container {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    right: 0;
+    padding-top: 8%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start; }
+
 .about-container {
   background: linear-gradient(to bottom right, #21D4FD, #B721FF); }
+  .about-container .about-animation-container {
+    display: inline-block;
+    position: relative; }
+  .about-container .diagonal-line-left {
+    position: absolute;
+    transform: translate(-120%, -120%);
+    transform-origin: center; }
+  .about-container .diagonal-line-right {
+    position: absolute;
+    right: 0;
+    transform: translate(120%, 20%);
+    transform-origin: center; }
   .about-container .about-text-container h1 {
     font-family: 'Poppins', sans-serif;
     font-weight: 200;
@@ -68,8 +105,122 @@
 
 .work-container {
   background: linear-gradient(to bottom left, #48C6EF, #6F86D6); }
+  .work-container .work-animation-container {
+    display: inline-block;
+    position: relative; }
+  .work-container .work-diagonal-line-left {
+    position: absolute;
+    transform: translate(0%, -120%);
+    transform-origin: center; }
+  .work-container .work-diagonal-line-right {
+    position: absolute;
+    right: 0;
+    transform: translate(0%, 20%);
+    transform-origin: center; }
+  .work-container .work-content-container {
+    height: 50vh;
+    width: 70vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative; }
+    .work-container .work-content-container .work-heading-container {
+      transform: translate(-160%, -100%) translate(0, -100px); }
+      .work-container .work-content-container .work-heading-container h1 {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 200;
+        font-size: 32px;
+        letter-spacing: 2.5px;
+        color: #FFF;
+        text-transform: uppercase; }
+    .work-container .work-content-container .work-options-container {
+      position: absolute;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      height: 100px;
+      width: 70vw; }
+      .work-container .work-content-container .work-options-container .work-digital-container, .work-container .work-content-container .work-options-container .work-illustration-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center; }
+      .work-container .work-content-container .work-options-container .work-digital-container {
+        position: absolute;
+        transform: translate(-50%, 0%) translate(-120px, 0%); }
+      .work-container .work-content-container .work-options-container .work-options-divide-line {
+        position: absolute;
+        height: 100px;
+        width: 1px;
+        background-color: #FFF; }
+      .work-container .work-content-container .work-options-container .work-illustration-container {
+        position: absolute;
+        transform: translate(50%, 0%) translate(120px, 0%); }
+      .work-container .work-content-container .work-options-container .work-first-letter, .work-container .work-content-container .work-options-container .work-letters, .work-container .work-content-container .work-options-container .work-last-letter {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 200;
+        letter-spacing: 2px;
+        color: #FFF;
+        text-transform: uppercase;
+        margin: 0; }
+      .work-container .work-content-container .work-options-container .work-first-letter {
+        font-size: 80px;
+        transform: translate(-2px, -28px); }
+      .work-container .work-content-container .work-options-container .work-letters {
+        font-size: 24px; }
+      .work-container .work-content-container .work-options-container .work-last-letter {
+        font-size: 80px;
+        transform: translate(2px, 28px); }
 
 .contact-container {
   background: linear-gradient(to bottom right, #868F96, #596164); }
+  .contact-container .contact-links-container {
+    margin-top: 60vh; }
+    .contact-container .contact-links-container .icons-img {
+      height: 40px;
+      width: 40px;
+      margin-right: 60px;
+      filter: brightness(0) invert(1); }
+    .contact-container .contact-links-container .icons-img.last-icon {
+      margin: 0 !important; }
+  .contact-container .contact-bio-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: absolute; }
+    .contact-container .contact-bio-container .portrait-container {
+      margin-right: 60px; }
+      .contact-container .contact-bio-container .portrait-container .portrait-img {
+        width: 200px;
+        height: 200px;
+        border-radius: 200px; }
+    .contact-container .contact-bio-container .contact-info-container {
+      margin-left: 60px; }
+      .contact-container .contact-bio-container .contact-info-container h1, .contact-container .contact-bio-container .contact-info-container h2, .contact-container .contact-bio-container .contact-info-container a {
+        color: #FFF;
+        font-family: 'Poppins', sans-serif;
+        letter-spacing: 1.7px; }
+      .contact-container .contact-bio-container .contact-info-container h1 {
+        font-size: 32px;
+        font-weight: 300;
+        margin-bottom: 20px; }
+      .contact-container .contact-bio-container .contact-info-container .contact-email-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px; }
+      .contact-container .contact-bio-container .contact-info-container h2 {
+        font-size: 18px;
+        font-weight: 200;
+        margin-bottom: 0; }
+      .contact-container .contact-bio-container .contact-info-container a {
+        font-size: 18px;
+        margin-left: 10px;
+        font-weight: 300;
+        text-decoration: underline; }
 
 /*# sourceMappingURL=Home.css.map */
