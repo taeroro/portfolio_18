@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import debounce from 'lodash/debounce';
 import smoothscroll from 'smoothscroll-polyfill'
+import { Link, withRouter } from "react-router-dom";
 import './Home.css';
 
 const diag_line_src = "/arts/diagonal_line.svg";
@@ -69,7 +70,6 @@ export default class Home extends Component {
   wheelEvent(event) {
     // Scrolling down
     if (!this.scrolling && event.deltaY > 0) {
-
       if (window.scrollY < this.state.windowHeight) {
         this.scrolling = true;
         window.scrollTo({
@@ -232,19 +232,23 @@ export default class Home extends Component {
             </div>
 
             <div className="work-options-container">
-              <div className="work-digital-container">
-                <h1 className="work-first-letter">D</h1>
-                <h1 className="work-letters">IGITA</h1>
-                <h1 className="work-last-letter">L</h1>
-              </div>
+              <Link className="work-digital-link" to={"/work/digital"}>
+                <div className="work-digital-container">
+                  <h1 className="work-first-letter">D</h1>
+                  <h1 className="work-letters">IGITA</h1>
+                  <h1 className="work-last-letter">L</h1>
+                </div>
+              </Link>
 
               <div className="work-options-divide-line"></div>
 
-              <div className="work-illustration-container">
-                <h1 className="work-first-letter">I</h1>
-                <h1 className="work-letters">LLUSTRATIO</h1>
-                <h1 className="work-last-letter">N</h1>
-              </div>
+              <Link className="work-illustration-link" to={"/work/illustration"}>
+                <div className="work-illustration-container">
+                  <h1 className="work-first-letter">I</h1>
+                  <h1 className="work-letters">LLUSTRATIO</h1>
+                  <h1 className="work-last-letter">N</h1>
+                </div>
+              </Link>
             </div>
           </div>
 

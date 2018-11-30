@@ -140,14 +140,27 @@
       flex-direction: row;
       justify-content: center;
       align-items: center;
-      height: 100px;
+      height: 120px;
       width: 70vw; }
+      .work-container .work-content-container .work-options-container .work-digital-link, .work-container .work-content-container .work-options-container .work-illustration-link {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        padding: 0;
+        background-color: rgba(60, 60, 60, 0);
+        transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1); }
+      .work-container .work-content-container .work-options-container .work-digital-link:hover, .work-container .work-content-container .work-options-container .work-illustration-link:hover {
+        padding: 35px 50px;
+        background-color: #3c3c3c; }
       .work-container .work-content-container .work-options-container .work-digital-container, .work-container .work-content-container .work-options-container .work-illustration-container {
         display: flex;
         flex-direction: row;
         justify-content: center;
-        align-items: center; }
-      .work-container .work-content-container .work-options-container .work-digital-container {
+        align-items: center;
+        z-index: 10; }
+      .work-container .work-content-container .work-options-container .work-digital-link {
         position: absolute;
         transform: translate(-50%, 0%) translate(-120px, 0%); }
       .work-container .work-content-container .work-options-container .work-options-divide-line {
@@ -155,7 +168,7 @@
         height: 100px;
         width: 1px;
         background-color: #FFF; }
-      .work-container .work-content-container .work-options-container .work-illustration-container {
+      .work-container .work-content-container .work-options-container .work-illustration-link {
         position: absolute;
         transform: translate(50%, 0%) translate(120px, 0%); }
       .work-container .work-content-container .work-options-container .work-first-letter, .work-container .work-content-container .work-options-container .work-letters, .work-container .work-content-container .work-options-container .work-last-letter {
