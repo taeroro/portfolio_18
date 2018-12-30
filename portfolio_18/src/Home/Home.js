@@ -6,7 +6,7 @@ import './Home.css';
 
 const diag_line_src = "/arts/diagonal_line.svg";
 
-export default class Home extends Component {
+class Home extends Component {
   constructor(props) {
     super(props);
 
@@ -17,7 +17,6 @@ export default class Home extends Component {
     };
 
     this.scrolling = false;
-    this.isFirefox = false;
 
     this.myRef1 = React.createRef();
     this.myRef2 = React.createRef();
@@ -29,26 +28,28 @@ export default class Home extends Component {
     this.disableScroll = this.disableScroll.bind(this);
     this.enableScroll = this.enableScroll.bind(this);
     this.wheelEvent = this.wheelEvent.bind(this);
+
+    this.debounceWheelEvent = debounce(this.wheelEvent, 34, {
+      'leading': true,
+      'trailing': false
+    });
   }
 
   componentDidMount() {
     this.state.pageNum = this.getInitPageNum();
-    this.isFirefox = typeof InstallTrigger !== 'undefined';
     this.disableScroll();
     this.updateWindowDimensions();
 
     smoothscroll.polyfill();
 
     window.addEventListener('resize', this.updateWindowDimensions);
-    window.addEventListener('wheel', debounce(this.wheelEvent, 34, {
-      'leading': true,
-      'trailing': false
-    }));
+    window.addEventListener('wheel', this.debounceWheelEvent);
   }
 
   componentWillUnmount() {
+    this.enableScroll();
     window.removeEventListener('resize', this.updateWindowDimensions);
-    window.removeEventListener('wheel', this.wheelEvent);
+    window.removeEventListener('wheel', this.debounceWheelEvent);
   }
 
   updateWindowDimensions() {
@@ -146,7 +147,6 @@ export default class Home extends Component {
       window.ontouchmove = null;
       document.onkeydown = null;
   }
-
 
   renderCornerLines() {
     return (
@@ -318,3 +318,5 @@ export default class Home extends Component {
     );
   }
 }
+
+export default withRouter(Home);

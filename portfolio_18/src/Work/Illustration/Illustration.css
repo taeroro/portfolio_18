@@ -1,0 +1,72 @@
+.illustration-main-container {
+  background: linear-gradient(to bottom left, #48C6EF, #6F86D6);
+  width: 100vw; }
+
+.illustration-corner-lines div[class*='corner-line-'] {
+  position: absolute;
+  width: 120px;
+  height: 1px;
+  background-color: #FFF; }
+.illustration-corner-lines .corner-line-tl {
+  top: 0;
+  left: 0;
+  transform: rotate(25deg);
+  transform-origin: top left; }
+.illustration-corner-lines .corner-line-tr {
+  top: 0;
+  right: 0;
+  transform: rotate(-25deg);
+  transform-origin: top right; }
+
+.illustration-header-container {
+  position: relative;
+  padding-top: 125px; }
+  .illustration-header-container h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 30px;
+    letter-spacing: 2.5px;
+    color: #FFF;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 40px 0 0 0;
+    padding-bottom: 40px; }
+  .illustration-header-container .illustration-back-link {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 70px;
+    transform: translate(0, -40%);
+    text-decoration: none;
+    padding: 0;
+    background-color: rgba(60, 60, 60, 0);
+    transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1); }
+  .illustration-header-container .illustration-back-link:hover {
+    padding: 10px 15px;
+    background-color: #3c3c3c; }
+  .illustration-header-container .illustration-back-bt-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; }
+    .illustration-header-container .illustration-back-bt-container .back-bt-icon {
+      height: 25px;
+      width: 25px;
+      filter: brightness(0) invert(1);
+      margin-right: 8px; }
+    .illustration-header-container .illustration-back-bt-container span {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 300;
+      font-size: 18px;
+      letter-spacing: 2.5px;
+      color: #FFF;
+      text-transform: uppercase; }
+
+.illustration-list-container {
+  background-color: #FFF;
+  height: 100px; }
+
+/*# sourceMappingURL=Illustration.css.map */

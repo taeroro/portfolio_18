@@ -1,0 +1,15 @@
+.digital-art-container {
+  width: 100vw;
+  padding-top: 170px;
+  padding-bottom: 170px;
+  background-color: #3C3C3C;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.digital-art-img {
+  width: 80%;
+  object-fit: contain;
+}
