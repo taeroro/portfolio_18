@@ -47,7 +47,18 @@ class Digital extends Component {
                 <div className="col-lg-4" key={item.id}>
                   <Link className="digital-single-link" to={"/work/digital/" + item.id}>
                     <div className="digital-single-container">
-                      <span>{item.name}</span>
+                      {
+                        item.thumbnail
+                        ? (
+                          <div>
+                            <div className="digital-thumbnail-overlay">
+                              <span className="digital-thumbnail-name">{item.name}</span>
+                            </div>
+                            <img src={item.thumbnail} className="digital-thumbnail-img" />
+                          </div>
+                        )
+                        : <div></div>
+                      }
                     </div>
                   </Link>
                 </div>
