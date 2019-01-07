@@ -93,7 +93,8 @@
   font-weight: 400;
   font-size: 32px;
   letter-spacing: 0.05rem;
-  color: #FFF; }
+  color: #FFF;
+  text-align: center; }
 
 .digital-thumbnail-img {
   position: absolute;

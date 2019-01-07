@@ -1,0 +1,96 @@
+.illustration-art-container {
+  width: 100vw;
+  height: 100vh;
+  padding-top: 170px;
+  padding-bottom: 170px;
+  background-color: #FFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .illustration-art-container .row {
+    width: 86%;
+    margin: 0 0 30px 0; }
+  .illustration-art-container .col-lg-9 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 30px; }
+  .illustration-art-container .col-lg-3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px; }
+
+.illustration-name {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 200;
+  font-size: 28px;
+  letter-spacing: 0.05rem;
+  color: #282828;
+  text-align: center; }
+
+.illustration-content {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 200;
+  font-size: 16px;
+  letter-spacing: 0.05rem;
+  color: #282828;
+  text-align: center; }
+
+.illustration-wrapper {
+  max-height: 80vh;
+  max-width: 80vh;
+  display: block;
+  background-color: #cbcbcb;
+  text-align: center;
+  padding: 100px; }
+
+.illustration-art-img {
+  height: 100%;
+  object-fit: contain; }
+
+.content-header-container {
+  position: absolute;
+  z-index: 1;
+  height: 170px;
+  width: 100%; }
+  .content-header-container .header-back-link {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 70px;
+    transform: translate(0, -40%);
+    text-decoration: none;
+    padding: 0;
+    background-color: rgba(60, 60, 60, 0);
+    transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1); }
+  .content-header-container .header-back-link:hover {
+    padding: 10px 15px;
+    background-color: #3c3c3c; }
+    .content-header-container .header-back-link:hover .header-bt-name {
+      color: #FFF; }
+    .content-header-container .header-back-link:hover .header-bt-icon {
+      filter: brightness(0) invert(1); }
+  .content-header-container .header-back-bt-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; }
+    .content-header-container .header-back-bt-container .header-bt-icon {
+      height: 25px;
+      width: 25px;
+      margin-right: 8px; }
+    .content-header-container .header-back-bt-container .header-bt-name {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 300;
+      font-size: 18px;
+      letter-spacing: 2.5px;
+      color: #000;
+      text-transform: uppercase; }
+
+/*# sourceMappingURL=IllustrationContentPage.css.map */

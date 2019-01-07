@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import debounce from 'lodash/debounce';
-import smoothscroll from 'smoothscroll-polyfill'
+import smoothscroll from 'smoothscroll-polyfill';
 import { Link, withRouter } from "react-router-dom";
 import './Home.css';
 

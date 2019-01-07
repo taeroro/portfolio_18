@@ -7,6 +7,7 @@ import Home from './Home/Home';
 import Digital from './Work/Digital/Digital';
 import Illustration from './Work/Illustration/Illustration';
 import DigitalContentPage from './Work/DigitalContentPage/DigitalContentPage';
+import IllustrationContentPage from './Work/IllustrationContentPage/IllustrationContentPage';
 
 export default () =>
   <Switch>
@@ -14,6 +15,7 @@ export default () =>
     <AppliedRoute path="/work/digital" exact component={Digital} />
     <AppliedRoute path="/work/illustration" exact component={Illustration} />
     <AppliedRoute path="/work/digital/:id" exact component={DigitalContentPage} />
+    <AppliedRoute path="/work/illustration/:id" exact component={IllustrationContentPage} />
 
     { /* Catch all unmatched routes */ }
     {/* <Route component={NotFound} /> */}

@@ -121,6 +121,7 @@
   font-size: 32px;
   letter-spacing: 0.05rem;
   color: #FFF;
+  text-align: center;
 }
 
 .illustration-thumbnail-img {
@@ -148,4 +149,14 @@
 .illustration-thumbnail-overlay:hover {
   background-color: rgba(0, 0, 0, 0.5);
   opacity: 1;
+}
+
+.illustration-img-wrapper {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  overflow: hidden;
 }

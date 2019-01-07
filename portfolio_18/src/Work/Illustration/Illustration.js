@@ -53,7 +53,9 @@ class Illustration extends Component {
                             <div className="illustration-thumbnail-overlay">
                               <span className="illustration-thumbnail-name">{item.name}</span>
                             </div>
-                            <img src={item.content} className="illustration-thumbnail-img" />
+                            <div className="illustration-img-wrapper">
+                              <img src={item.content} className="illustration-thumbnail-img" />
+                            </div>
                           </div>
                         )
                         : <div></div>

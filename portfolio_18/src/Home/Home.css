@@ -236,4 +236,57 @@
         font-weight: 300;
         text-decoration: underline; }
 
+@media screen and (max-width: 1440px) and (min-width: 1024px) {
+  .about-text-container h1 {
+    font-size: 24px !important;
+    letter-spacing: 0.1rem !important; }
+
+  .side-label-text {
+    font-size: 16px !important;
+    letter-spacing: 0.1rem !important; }
+
+  .side-label-line {
+    width: 70px !important;
+    margin-left: 10px !important; }
+
+  .right-shapes, .left-shapes {
+    width: 150px !important;
+    height: auto !important; }
+
+  div[class*='corner-line-'] {
+    width: 100px !important; }
+
+  .diagonal-line-left, .diagonal-line-right {
+    width: 60px !important;
+    height: auto !important; } }
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+  .about-text-container h1 {
+    font-size: 22px !important;
+    letter-spacing: 0.1rem !important; }
+
+  .side-label-text {
+    font-size: 14px !important;
+    letter-spacing: 0.1rem !important; }
+
+  .side-label-line {
+    width: 60px !important;
+    margin-left: 10px !important; }
+
+  .right-shapes, .left-shapes {
+    width: 130px !important;
+    height: auto !important; }
+
+  div[class*='corner-line-'] {
+    width: 90px !important; }
+
+  .diagonal-line-left, .diagonal-line-right {
+    width: 50px !important;
+    height: auto !important; }
+
+  .shapes-left-container {
+    padding-bottom: 20% !important; }
+
+  .shapes-right-container {
+    padding-top: 20% !important; } }
+
 /*# sourceMappingURL=Home.css.map */
