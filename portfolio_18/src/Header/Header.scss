@@ -36,3 +36,9 @@
 .header-hidden {
   transform: translate(-50%, -145px) !important;
 }
+
+@media screen and (max-width: 768px) {
+  .header-container {
+    transform: translate(-50%, 0) scale(0.75) !important;
+  }
+}
