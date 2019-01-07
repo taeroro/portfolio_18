@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link, withRouter } from "react-router-dom";
 import './Illustration.css';
 
+import { illustration_work_data } from '../IllustrationWorkData';
 const back_bt_img_src = "/buttons/back_button.svg"
 
 class Illustration extends Component {
@@ -39,7 +40,30 @@ class Illustration extends Component {
         </div>
 
         <div className="illustration-list-container">
-
+          <div className="row">
+            {illustration_work_data.map((item) => {
+              return (
+                <div className="col-lg-4" key={item.id}>
+                  <Link className="illustration-single-link" to={"/work/illustration/" + item.id}>
+                    <div className="illustration-single-container">
+                      {
+                        item.content
+                        ? (
+                          <div>
+                            <div className="illustration-thumbnail-overlay">
+                              <span className="illustration-thumbnail-name">{item.name}</span>
+                            </div>
+                            <img src={item.content} className="illustration-thumbnail-img" />
+                          </div>
+                        )
+                        : <div></div>
+                      }
+                    </div>
+                  </Link>
+                </div>
+              );
+            })}
+          </div>
         </div>
 
       </div>

@@ -19,6 +19,47 @@ class DigitalContentPage extends Component {
     });
     let i = 0;
 
+    // Special ones need a link
+    if (artwork_object.id !== 6) {
+      return (
+        <div className="digital-art-container">
+          {
+            artwork_object.content
+            ? (artwork_object.content.map((item) => {
+              if (i === 3) {
+                return (
+                  <div className="digital-special-container" key={i}>
+                    <div className="digital-link-container">
+                      {
+                        artwork_object.id === 1
+                        ? <a href="https://www.anvilstartups.com/">https://www.anvilstartups.com</a>
+                        :
+                        artwork_object.id === 2
+                        ? <iframe src="https://player.vimeo.com/video/309805012?title=0&amp;byline=0&amp;portrait=0" width="320" height="695" frameBorder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowFullScreen></iframe>
+                        :
+                        artwork_object.id === 3
+                        ? <a href="http://www.yintechlabs.com/">http://www.yintechlabs.com</a>
+                        :
+                        artwork_object.id === 4
+                        ? <iframe src="https://player.vimeo.com/video/309807419?title=0&amp;byline=0&amp;portrait=0" width="100%" height="500" frameBorder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowFullScreen></iframe>
+                        :
+                        artwork_object.id === 5
+                        ? <a href="https://invis.io/ZFPUDK92MVR">https://invis.io/ZFPUDK92MVR</a>
+                        : <div></div>
+                      }
+                    </div>
+                    <img src={item} className="digital-art-img-special" key={i++} />
+                  </div>
+                )
+              }
+              else return <img src={item} className="digital-art-img" key={i++} />;
+            }))
+            : <div></div>
+          }
+        </div>
+      );
+    }
+
     return (
       <div className="digital-art-container">
         {

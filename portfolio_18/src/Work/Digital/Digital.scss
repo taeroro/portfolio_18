@@ -91,6 +91,7 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+  padding-bottom: 45px + 80px;
 
   .row {
     margin: 0;
@@ -108,10 +109,6 @@
     position: relative;
     z-index: 1;
 
-    // border-width: 0 1px 1px 0;
-    // border-style: solid;
-    // border-color: #979797;
-
     background-color: #FFF;
     padding-bottom: 100%;
   }
@@ -122,7 +119,7 @@
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
   font-size: 32px;
-  letter-spacing: 0.07rem;
+  letter-spacing: 0.05rem;
   color: #FFF;
 }
 

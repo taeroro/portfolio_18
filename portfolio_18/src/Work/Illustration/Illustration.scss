@@ -88,7 +88,64 @@
 }
 
 .illustration-list-container {
-  background-color: #FFF;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-bottom: 45px + 80px;
 
-  height: 100px;
+  .row {
+    margin: 0;
+    width: 86%;
+  }
+  .col-lg-4 { padding: 0; }
+
+  .illustration-single-link { text-decoration: none; }
+
+  .illustration-single-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: relative;
+    z-index: 1;
+
+    background-color: #FFF;
+    padding-bottom: 100%;
+  }
+}
+
+.illustration-thumbnail-name {
+  position: absolute;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 32px;
+  letter-spacing: 0.05rem;
+  color: #FFF;
+}
+
+.illustration-thumbnail-img {
+  position: absolute;
+  height: 100%;
+  object-fit: contain;
+  z-index: 1;
+}
+
+.illustration-thumbnail-overlay {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgba(0, 0, 0, 0);
+  opacity: 0;
+  transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.illustration-thumbnail-overlay:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 1;
 }

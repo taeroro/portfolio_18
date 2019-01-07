@@ -68,7 +68,8 @@
 .digital-list-container {
   display: flex;
   flex-direction: row;
-  justify-content: center; }
+  justify-content: center;
+  padding-bottom: 125px; }
   .digital-list-container .row {
     margin: 0;
     width: 86%; }
@@ -91,7 +92,7 @@
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
   font-size: 32px;
-  letter-spacing: 0.07rem;
+  letter-spacing: 0.05rem;
   color: #FFF; }
 
 .digital-thumbnail-img {
