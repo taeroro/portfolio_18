@@ -43,7 +43,7 @@ class Illustration extends Component {
           <div className="row">
             {illustration_work_data.map((item) => {
               return (
-                <div className="col-lg-4" key={item.id}>
+                <div className="col-lg-4 col-md-6" key={item.id}>
                   <Link className="illustration-single-link" to={"/work/illustration/" + item.id}>
                     <div className="illustration-single-container">
                       {

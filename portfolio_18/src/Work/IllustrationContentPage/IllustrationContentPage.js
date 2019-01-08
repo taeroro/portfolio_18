@@ -36,8 +36,10 @@ class IllustrationContentPage extends Component {
             <div className="col-lg-9">
               {
                 artwork_object.content
-                ? (<div className="illustration-wrapper">
-                    <img src={artwork_object.content} className="illustration-art-img" key={i++} />
+                ? (<div className="illustration-wrapper" style={{
+                  "backgroundImage": `url(${artwork_object.content})`
+                }}>
+                    {/* <img src={artwork_object.content} className="illustration-art-img" key={i++} /> */}
                   </div>)
                 : <div></div>
               }

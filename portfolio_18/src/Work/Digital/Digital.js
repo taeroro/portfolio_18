@@ -44,7 +44,7 @@ class Digital extends Component {
           <div className="row">
             {digital_work_data.map((item) => {
               return (
-                <div className="col-lg-4" key={item.id}>
+                <div className="col-lg-4 col-md-6" key={item.id}>
                   <Link className="digital-single-link" to={"/work/digital/" + item.id}>
                     <div className="digital-single-container">
                       {

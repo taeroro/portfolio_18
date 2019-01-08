@@ -1,6 +1,7 @@
 .digital-main-container {
   background: linear-gradient(to bottom left, #48C6EF, #6F86D6);
-  width: 100vw; }
+  width: 100vw;
+  min-height: 100vh; }
 
 .digital-corner-lines div[class*='corner-line-'] {
   position: absolute;
@@ -118,5 +119,92 @@
 .digital-thumbnail-overlay:hover {
   background-color: rgba(0, 0, 0, 0.5);
   opacity: 1; }
+
+@media screen and (max-width: 1440px) and (min-width: 1024px) {
+  .digital-header-container h1 {
+    font-size: 26px  !important;
+    letter-spacing: 0.12rem !important; }
+
+  .digital-thumbnail-name {
+    font-size: 28px !important; }
+
+  .digital-back-bt-container .back-bt-icon {
+    margin-right: 8px !important; }
+  .digital-back-bt-container span {
+    font-size: 16px !important;
+    letter-spacing: 0.15rem !important; }
+
+  .digital-back-link:hover {
+    padding: 9px 12px !important; } }
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+  .digital-header-container h1 {
+    font-size: 22px  !important;
+    letter-spacing: 0.12rem !important; }
+
+  .digital-thumbnail-name {
+    font-size: 24px !important; }
+
+  .digital-back-bt-container .back-bt-icon {
+    width: 20px !important;
+    height: 20px !important;
+    margin-right: 6px !important; }
+  .digital-back-bt-container span {
+    font-size: 14px !important;
+    letter-spacing: 0.12rem !important; }
+
+  .digital-back-link:hover {
+    padding: 8px 12px !important; } }
+@media screen and (max-width: 768px) and (min-width: 425px) {
+  .digital-corner-lines {
+    display: none !important; }
+
+  .digital-header-container h1 {
+    font-size: 20px  !important;
+    letter-spacing: 0.12rem !important; }
+
+  .digital-thumbnail-name {
+    font-size: 22px !important; }
+
+  .digital-back-bt-container .back-bt-icon {
+    width: 18px !important;
+    height: 18px !important;
+    margin-right: 4px !important; }
+  .digital-back-bt-container span {
+    font-size: 12px !important;
+    letter-spacing: 0.08rem !important; }
+
+  .digital-back-link {
+    left: 6vw !important;
+    background-color: #3c3c3c !important;
+    padding: 6px 10px !important; }
+
+  .digital-back-link:hover {
+    padding: 6px 10px !important; } }
+@media screen and (max-width: 425px) {
+  .digital-corner-lines {
+    display: none !important; }
+
+  .digital-header-container h1 {
+    font-size: 18px  !important;
+    letter-spacing: 0.1rem !important; }
+
+  .digital-thumbnail-name {
+    font-size: 20px !important; }
+
+  .digital-back-bt-container .back-bt-icon {
+    width: 16px !important;
+    height: 16px !important;
+    margin-right: 4px !important; }
+  .digital-back-bt-container span {
+    font-size: 12px !important;
+    letter-spacing: 0.08rem !important; }
+
+  .digital-back-link {
+    left: 6vw !important;
+    padding: 6px 8px !important;
+    background-color: #3c3c3c !important; }
+
+  .digital-back-link:hover {
+    padding: 6px 8px !important; } }
 
 /*# sourceMappingURL=Digital.css.map */
