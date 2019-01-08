@@ -2,9 +2,27 @@ import React, { Component } from 'react';
 import debounce from 'lodash/debounce';
 import smoothscroll from 'smoothscroll-polyfill';
 import { Link, withRouter } from "react-router-dom";
+import { isMobile, isFirefox } from 'react-device-detect';
+import Modal from 'react-modal';
 import './Home.css';
 
 const diag_line_src = "/arts/diagonal_line.svg";
+const customStyles = {
+  content : {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    width: '80vw',
+    // height: '50vh',
+    padding: '12% 10%',
+    transform: 'translate(-50%, -50%)',
+    borderRadius: '0',
+    border: 'none',
+  }
+};
+Modal.defaultStyles.overlay.backgroundColor = 'rgba(0,0,0,0.4)';
+Modal.defaultStyles.overlay.zIndex = '20';
 
 class Home extends Component {
   constructor(props) {
@@ -13,7 +31,8 @@ class Home extends Component {
     this.state = {
       windowHeight: window.innerHeight,
       prevY: 0,
-      pageNum: 1
+      pageNum: 1,
+      modalIsOpen: false
     };
 
     this.scrolling = false;
@@ -28,6 +47,9 @@ class Home extends Component {
     this.disableScroll = this.disableScroll.bind(this);
     this.enableScroll = this.enableScroll.bind(this);
     this.wheelEvent = this.wheelEvent.bind(this);
+
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
 
     this.debounceWheelEvent = debounce(this.wheelEvent, 34, {
       'leading': true,
@@ -44,6 +66,8 @@ class Home extends Component {
 
     window.addEventListener('resize', this.updateWindowDimensions);
     window.addEventListener('wheel', this.debounceWheelEvent);
+
+    if (isMobile || isFirefox) this.openModal();
   }
 
   componentWillUnmount() {
@@ -146,6 +170,14 @@ class Home extends Component {
       window.onwheel = null;
       window.ontouchmove = null;
       document.onkeydown = null;
+  }
+
+  openModal() {
+    this.setState({ modalIsOpen: true });
+  }
+
+  closeModal() {
+    this.setState({ modalIsOpen: false });
   }
 
   renderCornerLines() {
@@ -305,9 +337,27 @@ class Home extends Component {
     );
   }
 
+  renderModal() {
+    return (
+      <Modal
+        isOpen={this.state.modalIsOpen}
+        onRequestClose={this.closeModal}
+        shouldCloseOnOverlayClick={false}
+        style={customStyles}
+      >
+        <h1 className="modal-message">For the best experience, please visit this website using browsers other than Firefox on a desktop or laptop.</h1>
+        <h1 className="modal-message">Sorry for the inconvenience.</h1>
+        <div className="modal-bt-wrapper">
+          <button className="modal-close-bt" onClick={this.closeModal}>OK</button>
+        </div>
+      </Modal>
+    );
+  }
+
   render() {
     return (
       <div className="home-main-container">
+        {this.renderModal()}
         {this.renderCornerLines()}
         {this.renderSideLabel()}
 
