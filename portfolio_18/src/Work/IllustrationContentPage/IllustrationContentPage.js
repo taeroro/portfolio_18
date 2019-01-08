@@ -25,8 +25,8 @@ class IllustrationContentPage extends Component {
         <div className="content-header-container">
           <Link className="header-back-link" to={"/work/illustration"}>
             <div className="header-back-bt-container">
-              <img className="header-bt-icon" src={back_bt_img_src} alt="back" />
-              <span className="header-bt-name">BACK</span>
+              <img className="header-bt-icon unselectable" src={back_bt_img_src} alt="back" />
+              <span className="header-bt-name unselectable">BACK</span>
             </div>
           </Link>
         </div>

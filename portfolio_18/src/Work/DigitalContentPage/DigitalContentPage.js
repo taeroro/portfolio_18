@@ -27,8 +27,8 @@ class DigitalContentPage extends Component {
           <div className="content-header-container">
             <Link className="header1-back-link" to={"/work/digital"}>
               <div className="header1-back-bt-container">
-                <img className="header1-bt-icon" src={back_bt_img_src} alt="back" />
-                <span className="header1-bt-name">BACK</span>
+                <img className="header1-bt-icon unselectable" src={back_bt_img_src} alt="back" />
+                <span className="header1-bt-name unselectable">BACK</span>
               </div>
             </Link>
           </div>

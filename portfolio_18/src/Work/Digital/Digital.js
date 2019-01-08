@@ -34,8 +34,8 @@ class Digital extends Component {
 
           <Link className="digital-back-link" to={"/"}>
             <div className="digital-back-bt-container">
-              <img className="back-bt-icon" src={back_bt_img_src} alt="back" />
-              <span>BACK</span>
+              <img className="back-bt-icon unselectable" src={back_bt_img_src} alt="back" />
+              <span className="unselectable">BACK</span>
             </div>
           </Link>
         </div>

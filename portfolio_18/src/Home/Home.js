@@ -150,7 +150,7 @@ class Home extends Component {
 
   renderCornerLines() {
     return (
-      <div className="home-corner-lines">
+      <div className="home-corner-lines unselectable">
         <div className="corner-line-tl"></div>
         <div className="corner-line-tr"></div>
         <div className="corner-line-br"></div>
@@ -162,11 +162,11 @@ class Home extends Component {
   renderLabelNumber() {
     switch (this.state.pageNum) {
       case 1:
-        return <div className="side-label-text">01 ABOUT</div>;
+        return <div className="side-label-text unselectable">01 ABOUT</div>;
       case 2:
-        return <div className="side-label-text">02 WORK</div>;
+        return <div className="side-label-text unselectable">02 WORK</div>;
       case 3:
-        return <div className="side-label-text">03 CONTACT</div>;
+        return <div className="side-label-text unselectable">03 CONTACT</div>;
     }
   }
 
@@ -186,7 +186,7 @@ class Home extends Component {
     // TODO: change the position using media query
     if (this.state.pageNum === 1)
       return (
-        <div className="home-random-shapes">
+        <div className="home-random-shapes unselectable">
           <div className="shapes-left-container">
             <img className="left-shapes" src={left_shapes_img_src} alt="l" />
           </div>
@@ -203,7 +203,7 @@ class Home extends Component {
         {this.renderShapes()}
 
         <div className="about-animation-container">
-          <img className="diagonal-line-left" src={diag_line_src} alt="l" />
+          <img className="diagonal-line-left unselectable" src={diag_line_src} alt="l" />
 
           <div className="about-text-container">
             <h1>HI,</h1>
@@ -212,7 +212,7 @@ class Home extends Component {
             <h1>FOCUSING ON UI / UX DESIGN.</h1>
           </div>
 
-          <img className="diagonal-line-right" src={diag_line_src} alt="r" />
+          <img className="diagonal-line-right unselectable" src={diag_line_src} alt="r" />
         </div>
       </div>
     );
@@ -224,14 +224,14 @@ class Home extends Component {
     return (
       <div className="home-container work-container" ref={this.myRef2}>
         <div className="work-animation-container">
-          <img className="work-diagonal-line-left" src={diag_line_src} alt="l" />
+          <img className="work-diagonal-line-left unselectable" src={diag_line_src} alt="l" />
 
           <div className="work-content-container">
             <div className="work-heading-container">
               <h1>MY WORKS:</h1>
             </div>
 
-            <div className="work-options-container">
+            <div className="work-options-container unselectable">
               <Link className="work-digital-link" to={"/work/digital"}>
                 <div className="work-digital-container">
                   <h1 className="work-first-letter">D</h1>
@@ -240,7 +240,7 @@ class Home extends Component {
                 </div>
               </Link>
 
-              <div className="work-options-divide-line"></div>
+              <div className="work-options-divide-line unselectable"></div>
 
               <Link className="work-illustration-link" to={"/work/illustration"}>
                 <div className="work-illustration-container">
@@ -252,7 +252,7 @@ class Home extends Component {
             </div>
           </div>
 
-          <img className="work-diagonal-line-right" src={diag_line_src} alt="r" />
+          <img className="work-diagonal-line-right unselectable" src={diag_line_src} alt="r" />
         </div>
       </div>
     );
@@ -272,7 +272,7 @@ class Home extends Component {
       <div className="home-container contact-container" ref={this.myRef3}>
         <div className="contact-bio-container">
           <div className="portrait-container">
-            <img className="portrait-img" src={portrait_img_src} alt="portrait" />
+            <img className="portrait-img unselectable" src={portrait_img_src} alt="portrait" />
           </div>
 
           <div className="contact-info-container">
@@ -284,7 +284,7 @@ class Home extends Component {
           </div>
         </div>
 
-        <div className="contact-links-container">
+        <div className="contact-links-container unselectable">
           <a href="https://www.linkedin.com/in/zuyuanfan/">
             <img className="icons-img" src={linkedin_img_src} alt="linkedin" />
           </a>

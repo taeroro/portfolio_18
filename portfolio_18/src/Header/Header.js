@@ -64,7 +64,7 @@ export default class Header extends Component {
         return (
           <div className={this.state.scrollPassNavbar && !this.state.scrollUp ? "header-container header-work header-hidden" : "header-container header-work"}>
             <a href="/">
-              <img className={"header-logo-img"} src={logo_img_src} alt="logo" />
+              <img className={"header-logo-img unselectable"} src={logo_img_src} alt="logo" />
             </a>
           </div>
         );
@@ -72,7 +72,7 @@ export default class Header extends Component {
         return (
           <div className="header-container">
             <a href="/">
-              <img className={"header-logo-img"} src={logo_img_src} alt="logo" />
+              <img className={"header-logo-img unselectable"} src={logo_img_src} alt="logo" />
             </a>
           </div>
         );
@@ -80,7 +80,7 @@ export default class Header extends Component {
         return (
           <div className={this.state.scrollPassNavbar && !this.state.scrollUp ? "header-container header-hidden" : "header-container"}>
             <a href="/">
-              <img className={"header-logo-img"} src={logo_img_src} alt="logo" />
+              <img className={"header-logo-img unselectable"} src={logo_img_src} alt="logo" />
             </a>
           </div>
         );

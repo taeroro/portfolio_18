@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 
 import Header from './Header/Header';
 import Routes from './Routes';
+import Footer from './Footer/Footer';
 
 class App extends Component {
   render() {
@@ -11,6 +12,7 @@ class App extends Component {
       <div className="App">
         <Header {...this.props} />
         <Routes />
+        <Footer {...this.props} />
       </div>
     );
   }

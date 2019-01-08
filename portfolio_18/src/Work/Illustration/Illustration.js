@@ -33,8 +33,8 @@ class Illustration extends Component {
 
           <Link className="illustration-back-link" to={"/"}>
             <div className="illustration-back-bt-container">
-              <img className="back-bt-icon" src={back_bt_img_src} alt="back" />
-              <span>BACK</span>
+              <img className="back-bt-icon unselectable" src={back_bt_img_src} alt="back" />
+              <span className="unselectable">BACK</span>
             </div>
           </Link>
         </div>
